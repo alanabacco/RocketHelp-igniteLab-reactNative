@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { VStack, Heading, Icon, useTheme } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
 import Logo from "../assets/logo_primary.svg";
 
-import { Input } from "../components/input";
+import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 
 export function SignIn() {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
   const { colors } = useTheme();
+
+  function handleSignIn() {}
 
   return (
     <VStack flex={1} alignItems="center" bg="gray.600" px={8} pt={24}>
@@ -21,6 +27,7 @@ export function SignIn() {
         InputLeftElement={
           <Icon as={<FontAwesome name="envelope-o" color={colors.gray[300]} />} ml={4} />
         }
+        onChangeText={setName}
       />
       <Input
         mb={8}
@@ -29,9 +36,10 @@ export function SignIn() {
           <Icon as={<FontAwesome name="key" color={colors.gray[300]} />} ml={4} />
         }
         secureTextEntry
+        onChangeText={setPassword}
       />
 
-      <Button title="Entrar" w="full" />
+      <Button title="Entrar" w="full" onPress={handleSignIn} />
     </VStack>
   );
 }

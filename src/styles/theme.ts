@@ -1,5 +1,6 @@
 import { extendTheme } from "native-base";
 
+// sobrescreve os estilos do native-base
 export const THEME = extendTheme({
   colors: {
     primary: {

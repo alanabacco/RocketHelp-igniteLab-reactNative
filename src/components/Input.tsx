@@ -11,7 +11,7 @@ export function Input({ ...rest }: IInputProps) {
       fontFamily="body"
       color="white"
       placeholderTextColor="gray.300"
-      _focus={{ borderWidth: 1, borderColor: "green.500", bg: "green.700" }} // com _ são pseudo propriedades
+      _focus={{ borderWidth: 1, borderColor: "green.500", bg: "gray.700" }} // com _ são pseudo propriedades
       {...rest} // rest operator, pra coisas que não são fixas
     />
   );
